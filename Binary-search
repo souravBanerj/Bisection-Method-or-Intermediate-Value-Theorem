@@ -1,0 +1,23 @@
+def f(x):
+    return x*x*x + 4*x*x -10 
+def bisection_f(a,b):
+    if(f(a)*f(b)>=0):
+        print("You have not assumed value of a and b correctly\n")
+        return
+    
+    c=a
+    while((b-a)>0.01):
+        c=(a+b)/2
+        if(f(c)==0.0):
+            break
+        if(f(c)*f(a)<0):
+            b=c  # sign of a and c is different then put b=c
+        else:
+            a=c  # sign of a and c is same therefore a=c
+        print("The value of root is : ","%.4f"%c)
+
+
+a =1
+b =2
+bisection_f(a, b)
+  
